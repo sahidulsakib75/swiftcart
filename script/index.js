@@ -5,10 +5,8 @@ const trendingProducts = async () => {
         const res = await fetch("https://fakestoreapi.com/products");
         const data = await res.json();
 
-        // Shuffle products
         const shuffled = [...data].sort(() => 0.5 - Math.random());
 
-        // Take top 3 random products
         const topProducts = shuffled.slice(0, 3);
 
         displayTrendingProducts(topProducts);
